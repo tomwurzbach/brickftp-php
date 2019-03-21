@@ -1,0 +1,38 @@
+{
+  "name": "tomwurzbach/brickftp-php",
+  "type": "project",
+  "description": "BrickFTP PHP library",
+  "keywords": [
+    "brickftp"
+  ],
+  "license": "MIT",
+  "require": {
+    "php": ">=5.4.0",
+    "ext-curl": "*",
+    "ext-json": "*",
+    "ext-mbstring": "*",
+    "guzzlehttp/guzzle": "^6.3",
+    "psy/psysh": "^0.9.9"
+  },
+  "require-dev": {
+    "phpunit/phpunit": "~4.0"
+  },
+  "config": {
+    "optimize-autoloader": true,
+    "preferred-install": "dist",
+    "sort-packages": true
+  },
+  "autoload": {
+    "psr-4": {
+      "BrickFTP\\": "lib/"
+    },
+    "classmap": [
+    ]
+  },
+  "autoload-dev": {
+    "psr-4": {
+    }
+  },
+  "minimum-stability": "dev",
+  "prefer-stable": true
+}
