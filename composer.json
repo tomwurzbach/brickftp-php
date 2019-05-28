@@ -1,7 +1,7 @@
 {
-  "name": "tomwurzbach/files-php",
+  "name": "tomwurzbach/brickftp-php",
   "type": "project",
-  "description": "Files.com PHP library",
+  "description": "Wrapper for BrickFTP.com API library",
   "keywords": [
     "brickftp", "files", "files.com", "brickftp.com"
   ],
@@ -24,7 +24,7 @@
   },
   "autoload": {
     "psr-4": {
-      "Files\\": "lib/"
+      "BrickFTP\\": "lib/"
     },
     "classmap": [
     ]
