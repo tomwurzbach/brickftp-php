@@ -1,13 +1,6 @@
 <?php
-/**
- * Created by PhpStorm.
- * User: tomwurzbach
- * Date: 3/18/19
- * Time: 10:00 PM
- */
 
 namespace BrickFTP;
-
 
 class ApiResource extends BrickObject
 {
@@ -19,7 +12,7 @@ class ApiResource extends BrickObject
     public static function baseUrl()
     {
         $baseUrl = BrickFTP::$apiBase;
-        return str_replace( "{subdomain}", "lifesouth", $baseUrl );
+        return str_replace( "{subdomain}", BrickFTP::$subdomain, $baseUrl );
     }
 
     /**
@@ -28,7 +21,7 @@ class ApiResource extends BrickObject
     public static function classUrl()
     {
         $base = static::className();
-        return "/v1/${base}s";
+        return "/" . BrickFTP::$apiVersion . "/${base}s";
     }
 
     public function instanceUrl()

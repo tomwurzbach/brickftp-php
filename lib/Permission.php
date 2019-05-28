@@ -1,9 +1,4 @@
 <?php
-/**
- * User: tomwurzbach
- * Date: 3/18/19
- * Time: 8:09 PM
- */
 
 namespace BrickFTP;
 

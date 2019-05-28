@@ -1,12 +1,6 @@
 <?php
-/**
- * User: tomwurzbach
- * Date: 3/18/19
- * Time: 9:55 PM
- */
 
 namespace BrickFTP\ApiOperations;
-
 
 use BrickFTP\BrickFTP;
 use GuzzleHttp\Client;
@@ -17,7 +11,7 @@ trait Request
     {
         $options || $options = [];
 
-        $options = array_merge( $options,[
+        $options = array_merge( $options, [
             'auth' => [
                 BrickFTP::$apiKey,
                 'x'
@@ -28,7 +22,7 @@ trait Request
                 'headers' => [
                     'Content-Type' => 'application/json'
                 ]
-            ]);
+            ] );
         }
 
         $baseUrl = static::baseUrl();
@@ -42,7 +36,7 @@ trait Request
     {
         $options || $options = [];
 
-        $options = array_merge( $options,[
+        $options = array_merge( $options, [
             'auth' => [
                 BrickFTP::$apiKey,
                 'x'
@@ -50,7 +44,7 @@ trait Request
         if ( $params ) {
             $options = array_merge( $options, [
                 'body' => json_encode( $params )
-            ]);
+            ] );
         }
 
         $baseUrl = static::baseUrl();
@@ -62,11 +56,10 @@ trait Request
 
     public static function convertToObject( $response, $opts )
     {
-        if ( is_array( $response ) )
-        {
+        if ( is_array( $response ) ) {
             $map = [];
-            foreach ($response as $i) {
-                array_push($map, static::constructFrom( $i, $opts ));
+            foreach ( $response as $i ) {
+                array_push( $map, static::constructFrom( $i, $opts ) );
             }
             return $map;
         }

@@ -1,10 +1,4 @@
 <?php
-/**
- * Created by PhpStorm.
- * User: tomwurzbach
- * Date: 3/19/19
- * Time: 6:53 AM
- */
 
 namespace BrickFTP;
 
@@ -53,26 +47,7 @@ class BrickObject extends \ArrayIterator
 
         }
         return $nullval;
-        /*
-        else if (!empty($this->_transientValues) && $this->_transientValues->includes($k)) {
-            $class = get_class($this);
-            $attrs = join(', ', array_keys($this->_values));
-            $message = "Stripe Notice: Undefined property of $class instance: $k. "
-                . "HINT: The $k attribute was set in the past, however. "
-                . "It was then wiped when refreshing the object "
-                . "with the result returned by Stripe's API, "
-                . "probably as a result of a save(). The attributes currently "
-                . "available on this object are: $attrs";
-            Stripe::getLogger()->error($message);
-            return $nullval;
-        } else {
-            $class = get_class($this);
-            Stripe::getLogger()->error("Stripe Notice: Undefined property of $class instance: $k");
-            return $nullval;
-        }
-        */
     }
-
 
     public static function constructFrom( $values, $opts )
     {
