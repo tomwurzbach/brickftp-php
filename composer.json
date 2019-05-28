@@ -1,9 +1,9 @@
 {
-  "name": "tomwurzbach/brickftp-php",
+  "name": "tomwurzbach/files-php",
   "type": "project",
-  "description": "BrickFTP PHP library",
+  "description": "Files.com PHP library",
   "keywords": [
-    "brickftp"
+    "brickftp", "files", "files.com", "brickftp.com"
   ],
   "license": "MIT",
   "require": {
