@@ -15,4 +15,7 @@ class BrickFTP
 
     // @var string The subdomain for the Files API.
     public static $subdomain;
+
+    // @var string The domain for the Files API.
+    public static $domain;
 }

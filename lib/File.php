@@ -3,12 +3,8 @@
 
 namespace BrickFTP;
 
-use BrickFTP\ApiOperations\All;
-use BrickFTP\ApiOperations\Create;
-use BrickFTP\ApiOperations\Delete;
-use BrickFTP\ApiOperations\Show;
+use GuzzleHttp\Client;
 use GuzzleHttp\Exception\ClientException;
-use GuzzleHttp\Exception\RequestException;
 
 class File extends ApiResource
 {
@@ -36,6 +32,13 @@ class File extends ApiResource
 
     public function contents()
     {
-        return file_get_contents( $this->download_uri );
+        try {
+            $client = new Client();
+            $response = $client->get( $this->download_uri );
+            return $response->getBody();
+        } catch( ClientException $re ) {
+            if ( $re->getResponse()->getStatusCode() == 404 ) return false;
+            throw new BrickFTPException( $re->getMessage() );
+        }
     }
 }
