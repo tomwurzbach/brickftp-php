@@ -35,7 +35,7 @@ class File extends ApiResource
         try {
             $client = new Client();
             $response = $client->get( $this->download_uri );
-            return $response->getBody();
+            return $response->getBody()->getContents();
         } catch( ClientException $re ) {
             if ( $re->getResponse()->getStatusCode() == 404 ) return false;
             throw new BrickFTPException( $re->getMessage() );
