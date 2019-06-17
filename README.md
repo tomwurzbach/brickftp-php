@@ -5,6 +5,8 @@
 [![StyleCI](https://styleci.io/repos/7548986/shield?branch=master)](https://styleci.io/repos/7548986)
 [![Quality Score](https://img.shields.io/scrutinizer/g/tomwurzbach/brickftp-php.svg?style=flat-square)](https://scrutinizer-ci.com/g/tomwurzbach/brickftp-php)
 [![Total Downloads](https://img.shields.io/packagist/dt/tomwurzbach/brickftp-php.svg?style=flat-square)](https://packagist.org/packages/tomwurzbach/brickftp-php)
+[![License](https://img.shields.io/badge/license-MIT-brightgreen.svg?style=flat-square)](https://github.com/tomwurzbach/brickftp-php/blob/master/LICENSE)
+
 
 [Files.com](https://files.com) provides a rich API. This package can help you access this API more easily from your PHP programs.
 
