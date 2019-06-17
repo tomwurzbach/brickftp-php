@@ -23,11 +23,17 @@ class File extends ApiResource
 
     public static function download( $file )
     {
-        $url = static::classUrl() . $file;
+        try {
+            $url = static::classUrl() . $file;
 
-        $response = static::_requestRaw( 'get', $url );
-        $obj = static::convertToObject( $response, null  );
-        return $obj;
+            $response = static::_requestRaw( 'get', $url );
+            $obj = static::convertToObject( $response, null );
+            return $obj;
+        } catch ( ClientException $e ) {
+            if ( $e->getResponse()->getStatusCode() == 404 )
+                throw BrickFTPException::file_not_found( $file );
+            throw new BrickFTPException( $e->getMessage(), 0, $e );
+        }
     }
 
     public function contents()
